@@ -13,7 +13,7 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.NightingaleWeather.NoActionBar"></activity>
+            android:theme="@style/Theme.NightingaleWeather.NoActionBar" />
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/app_name"
