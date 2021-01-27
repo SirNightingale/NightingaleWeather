@@ -42,7 +42,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 break;
         }
         return fragment;
-        //return PlaceholderFragment.newInstance(position + 1);
     }
 
     @Nullable
