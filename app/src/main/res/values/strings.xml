@@ -12,12 +12,15 @@
     <string name="tab_text_1">Weather</string>
     <string name="tab_text_2">History</string>
     <string name="tab_text_3">Map</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_location_permission">Местоположение</string>
+    <string name="text_location_permission">Разрешить этой программе доступ к местоположению?</string>
+    <string name="ok">Разрешить</string>
 
     <string name="change_city">Change city</string>
     <!-- Put your own APP ID here -->
     <string name="open_weather_maps_app_id">aef47909abb84bdd3bf3a82d68e35fc9</string>
+    <string name="api_map_key">AIzaSyCNdr4CkX2OqZ-ISnQdJPZn6VO6D-yrMQ8</string>
 
     <string name="weather_sunny">&#xf00d;</string>
     <string name="weather_clear_night">&#xf02e;</string>

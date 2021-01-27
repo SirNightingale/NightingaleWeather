@@ -28,7 +28,7 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * {@link Fragment} responsible
+ * The {@link Fragment} responsible
  * For finding and displaying
  * Weather by city.
  */

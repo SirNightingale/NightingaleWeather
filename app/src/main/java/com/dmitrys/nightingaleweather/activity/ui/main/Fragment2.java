@@ -14,11 +14,10 @@ import com.dmitrys.nightingaleweather.DBCity;
 import com.dmitrys.nightingaleweather.R;
 
 /**
- * A simple {@link Fragment} subclass.
- * <p>
- * create an instance of this fragment.
+ * The {@link Fragment} responsible
+ * For displaying the search
+ * History.
  */
-//Use the {@link Fragment1#newInstance} factory method to
 public class Fragment2 extends Fragment implements View.OnClickListener {
 
     private static DBCity dbCity;
