@@ -50,7 +50,6 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
     @Override
     public void onPause() {
         super.onPause();
-        loadList();
     }
 
     @Override
@@ -62,16 +61,20 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        String lastDate = getString(R.string.last_date);
+        String humidity = getString(R.string.humidity);
+        String pressure = getString(R.string.pressure);
+        String pressureUnit = getString(R.string.pressure_unit);
         final int viewId = view.getId();
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(dbCity.getListOfNames().get(view.getId()) +
                 ", " + dbCity.getListOfCountries().get(view.getId()))
                 .setMessage(
-                        "date: " + dbCity.getListOfDates().get(view.getId()) + "\n" +
-                                "description: " + dbCity.getListOfDescriptions().get(view.getId()) + "\n" +
-                                "humidity: " + dbCity.getListOfHumidity().get(view.getId()) + "\n" +
-                                "pressure: " + dbCity.getListOfPressure().get(view.getId()) + "\n" +
-                                "temperature: " + dbCity.getListOfTemperature().get(view.getId())
+                        dbCity.getListOfDescriptions().get(view.getId()) + "\n" +
+                                dbCity.getListOfTemperature().get(view.getId()) + "\n" +
+                                lastDate + ": " + dbCity.getListOfDates().get(view.getId()) + "\n" +
+                                humidity + ": " + dbCity.getListOfHumidity().get(view.getId()) + "\n" +
+                                pressure + ": " + dbCity.getListOfPressure().get(view.getId()) + " " + pressureUnit
                 )
                 //.setIcon(R.drawable.logo)
                 .setCancelable(true);
@@ -97,7 +100,7 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
             elementsId[i] = i;
         }
 
-        for (int i = dbCity.getListOfNames().size()-1; i > 0; i--) {
+        for (int i = dbCity.getListOfNames().size() - 1; i > 0; i--) {
             View item = ltInflater.inflate(R.layout.city, linLayout, false);
             item.setId(elementsId[i]);
             item.setOnClickListener(this);

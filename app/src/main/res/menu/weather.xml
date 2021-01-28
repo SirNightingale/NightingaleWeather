@@ -9,17 +9,17 @@
         <item
             android:id="@+id/menu_rus"
             android:orderInCategory="1"
-            android:title="rus">
+            android:title="Русский">
         </item>
         <item
             android:id="@+id/menu_eng"
             android:orderInCategory="2"
-            android:title="eng">
+            android:title="English">
         </item>
         <item
             android:id="@+id/menu_fra"
             android:orderInCategory="3"
-            android:title="fra">
+            android:title="Français">
         </item>
     </group>
 

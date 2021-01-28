@@ -17,7 +17,7 @@
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.NightingaleWeather.NoActionBar" />
+            android:theme="@style/Theme.NightingaleWeather.ActionBar" />
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/app_name"

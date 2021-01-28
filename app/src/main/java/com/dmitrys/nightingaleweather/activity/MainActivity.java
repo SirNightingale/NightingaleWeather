@@ -1,6 +1,7 @@
 package com.dmitrys.nightingaleweather.activity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.dmitrys.nightingaleweather.DBCity;
@@ -18,6 +19,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.dmitrys.nightingaleweather.activity.ui.main.SectionsPagerAdapter;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,24 +57,29 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Locale locale = null;
+        setTitle(R.string.app_name);
         switch (item.getItemId()) {
             case R.id.menu_rus:
+                locale = new Locale("ru");
                 break;
             case R.id.menu_eng:
+                locale = new Locale("en");
                 break;
             case R.id.menu_fra:
+                locale = new Locale("fr");
                 break;
         }
+        // display the text of another locale
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration, null);
 
+        // recreates activity
+        recreate();
         return super.onOptionsItemSelected(item);
     }
-
-//    public void changeCity(String city){
-//        Fragment1 wf = (Fragment1) getSupportFragmentManager()
-//                .findFragmentById(R.id.container);
-//        wf.changeCity(city);
-//        new CityPreference(this).setCity(city);
-//    }
 
     private void logoutUser() {
         session.setLogin(false);
@@ -90,16 +98,13 @@ public class MainActivity extends AppCompatActivity {
             logoutUser();
             super.onBackPressed();
         } else {
-            Toast.makeText(getBaseContext(), "Press once again to exit!", Toast.LENGTH_SHORT).show();
+            String pressAgain = getString(R.string.press_again);
+            Toast.makeText(getBaseContext(), pressAgain, Toast.LENGTH_SHORT).show();
         }
         back_pressed = System.currentTimeMillis();
     }
 
     public static DBCityHelper getDBHelper() {
         return DBHelper;
-    }
-
-    public static DBCity getDBCity() {
-        return dbCity;
     }
 }

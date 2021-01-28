@@ -64,8 +64,9 @@ public class RegisterActivity extends Activity {
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
                     registerUser(name, email, password);
                 } else {
+                    String enterDetails = getString(R.string.toast_enter_details);
                     Toast.makeText(getApplicationContext(),
-                            "Please enter your details!", Toast.LENGTH_LONG)
+                            enterDetails, Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -92,7 +93,8 @@ public class RegisterActivity extends Activity {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
-        pDialog.setMessage("Registering ...");
+        String progressRegistering = getString(R.string.progress_registering);
+        pDialog.setMessage(progressRegistering);
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -120,7 +122,8 @@ public class RegisterActivity extends Activity {
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
-                        Toast.makeText(getApplicationContext(), "User successfully registered. Try login now!", Toast.LENGTH_LONG).show();
+                        String successRegister = getString(R.string.success_register);
+                        Toast.makeText(getApplicationContext(), successRegister, Toast.LENGTH_LONG).show();
 
                         // Launch login activity
                         Intent intent = new Intent(

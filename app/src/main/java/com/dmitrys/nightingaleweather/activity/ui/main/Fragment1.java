@@ -19,7 +19,6 @@ import com.dmitrys.nightingaleweather.CityPreference;
 import com.dmitrys.nightingaleweather.DBCity;
 import com.dmitrys.nightingaleweather.R;
 import com.dmitrys.nightingaleweather.RemoteFetch;
-import com.dmitrys.nightingaleweather.activity.MainActivity;
 
 import org.json.JSONObject;
 
@@ -115,6 +114,11 @@ public class Fragment1 extends Fragment {
     }
 
     private void renderWeather(JSONObject json) {
+        String lastUpdate = getString(R.string.last_update);
+        String humidity = getString(R.string.humidity);
+        String pressure = getString(R.string.pressure);
+        String pressureUnit = getString(R.string.pressure_unit);
+
         try {
             cityField.setText(json.getString("name").toUpperCase(Locale.US) +
                     ", " +
@@ -124,15 +128,15 @@ public class Fragment1 extends Fragment {
             JSONObject main = json.getJSONObject("main");
             detailsField.setText(
                     details.getString("description").toUpperCase(Locale.US) +
-                            "\n" + "Humidity: " + main.getString("humidity") + "%" +
-                            "\n" + "Pressure: " + main.getString("pressure") + " hPa");
+                            "\n" + humidity + ": " + main.getString("humidity") + "%" +
+                            "\n" + pressure +": " + main.getString("pressure") + " " + pressureUnit);
 
             currentTemperatureField.setText(
                     String.format("%.2f", main.getDouble("temp")) + " ℃");
 
             DateFormat df = DateFormat.getDateTimeInstance();
             String updatedOn = df.format(new Date(json.getLong("dt") * 1000));
-            updatedField.setText("Last update: " + updatedOn);
+            updatedField.setText(lastUpdate + ": " + updatedOn);
 
             setWeatherIcon(details.getInt("id"),
                     json.getJSONObject("sys").getLong("sunrise") * 1000,
@@ -144,9 +148,9 @@ public class Fragment1 extends Fragment {
                     updatedOn,
                     details.getString("description").toUpperCase(Locale.US),
                     main.getString("humidity") + "%",
-                    main.getString("pressure") + " hPa",
+                    main.getString("pressure"),
                     String.format("%.2f", main.getDouble("temp")) + " ℃");
-            Log.i("SimpleWeather", "d");
+            Log.i("SimpleWeather", "Successfully saving data");
         } catch (Exception e) {
             Log.e("SimpleWeather", "One or more fields not found in the JSON data");
         }

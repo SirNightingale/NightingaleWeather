@@ -1,17 +1,60 @@
 <resources>
     <string name="app_name">NightingaleWeather</string>
-    <string name="title_activity_main">* что-то на французком*</string>
+    <string name="title_activity_main">NightingaleWeather</string>
 
+    // Écrans d'inscription et de connexion
     <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_name">Fullname</string>
-    <string name="btn_login">LOGIN</string>
-    <string name="btn_register">REGISTER</string>
-    <string name="btn_link_to_register">Not a member? Sign up now.</string>
-    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="hint_password">Mot de passe</string>
+    <string name="hint_name">Nom complet</string>
+    <string name="btn_login">Entrer</string>
+    <string name="btn_register">S\'inscrire maintenant</string>
+    <string name="btn_link_to_register">Non enregistré? Créer un compte enregistrement.</string>
+    <string name="btn_link_to_login">Déjà enregistré! Entrer.</string>
+    <string name="toast_enter_details">Merci de remplir tous les champs!</string>
+    <string name="progress_registering">Enregistrement ...</string>
+    <string name="success_register">Inscription réussie. Essayez de vous connecter!</string>
+    <string name="toast_enter_credentials">Veuillez entrer vos identifiants!</string>
+    <string name="progress_logging">Se connecter ...</string>
 
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="tab_text_3">Tab 3</string>
+    // Écran principal
+    // Onglets
+    <string name="tab_text_1">Temps</string>
+    <string name="tab_text_2">L\'histoire</string>
+    <string name="tab_text_3">Carte</string>
+
+    // Notification pour appuyer à nouveau sur le bouton de sortie
+    <string name="press_again">Cliquez à nouveau pour quitter!</string>
+
+    // Description des variables météorologiques
+    <string name="last_update">Dernière mise à jour</string>
+    <string name="last_date">la date</string>
+    <string name="humidity">Humidité</string>
+    <string name="pressure">Pression</string>
+    <string name="pressure_unit">hPa</string>
+
+    // 1er fragment; icônes de texte
+    // Journée sans nuages
+    <string name="weather_sunny">&#xf00d;</string>
+    // Nuit sans nuages
+    <string name="weather_clear_night">&#xf02e;</string>
+    // Brouillard
+    <string name="weather_foggy">&#xf014;</string>
+    // Nuageux
+    <string name="weather_cloudy">&#xf013;</string>
+    // Pluie abondante
+    <string name="weather_rainy">&#xf019;</string>
+    // Neige
+    <string name="weather_snowy">&#xf01b;</string>
+    // Tonnerre
+    <string name="weather_thunder">&#xf01e;</string>
+    // Bruine
+    <string name="weather_drizzle">&#xf01c;</string>
+    // Sans données météorologiques
+    <string name="place_not_found">Désolé, aucune donnée météo disponible.</string>
+
+    // 3e fragment; demande d'autorisation de localisation
+    <string name="title_location_permission">Accès à l\'emplacement</string>
+    <string name="text_location_permission">Autoriser ce programme à accéder à l\'emplacement?</string>
+    <string name="ok">Autoriser</string>
 
 </resources>

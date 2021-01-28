@@ -1,17 +1,60 @@
 <resources>
     <string name="app_name">NightingaleWeather</string>
-    <string name="title_activity_main">Основное окно</string>
+    <string name="title_activity_main">NightingaleWeather</string>
 
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
-    <string name="hint_name">Fullname</string>
-    <string name="btn_login">LOGIN</string>
-    <string name="btn_register">REGISTER</string>
-    <string name="btn_link_to_register">Not a member? Sign up now.</string>
-    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    // Экраны регистрации и входа
+    <string name="hint_email">Эл. адрес</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_name">Полное имя</string>
+    <string name="btn_login">ВОЙТИ</string>
+    <string name="btn_register">ЗАРЕГИСТРИРОВАТЬСЯ</string>
+    <string name="btn_link_to_register">Не зарегистрирован? Создать уч. запись.</string>
+    <string name="btn_link_to_login">Уже зарегистрировался! Войти.</string>
+    <string name="toast_enter_details">Пожалуйста, заполните все поля!</string>
+    <string name="progress_registering">Регистрация ...</string>
+    <string name="success_register">Успешная регистрация. Попробуй войти!</string>
+    <string name="toast_enter_credentials">Пожалуйста, введите учётные данные!</string>
+    <string name="progress_logging">Выполняется вход ...</string>
 
+    // Основное окно
+    // Вкладки
     <string name="tab_text_1">Погода</string>
     <string name="tab_text_2">История</string>
     <string name="tab_text_3">Карта</string>
+
+    // Уведомление о необходимости повторно нажать кнопку выход
+    <string name="press_again">Нажмите ещё раз, чтобы выйти!</string>
+
+    // Описание переменных погоды
+    <string name="last_update">Последнее обновление</string>
+    <string name="last_date">Дата</string>
+    <string name="humidity">Влажность</string>
+    <string name="pressure">Давление</string>
+    <string name="pressure_unit">мм рт. ст.</string>
+
+    // 1-ый фрагмент; текстовые иконки
+    // Безоблачный день
+    <string name="weather_sunny">&#xf00d;</string>
+    // Безоблачная ночь
+    <string name="weather_clear_night">&#xf02e;</string>
+    // Туман
+    <string name="weather_foggy">&#xf014;</string>
+    // Облачно
+    <string name="weather_cloudy">&#xf013;</string>
+    // Ливень
+    <string name="weather_rainy">&#xf019;</string>
+    // Идёт снег
+    <string name="weather_snowy">&#xf01b;</string>
+    // Гроза
+    <string name="weather_thunder">&#xf01e;</string>
+    // Морось
+    <string name="weather_drizzle">&#xf01c;</string>
+    // При отсутствии данных о погоде
+    <string name="place_not_found">К сожалению, данных о погоде нет.</string>
+
+    // 3-й фрагмент; запрос на разрешение "местоположения"
+    <string name="title_location_permission">Доступ к местоположению</string>
+    <string name="text_location_permission">Разрешить этой программе доступ к местоположению?</string>
+    <string name="ok">Разрешить</string>
 
 </resources>

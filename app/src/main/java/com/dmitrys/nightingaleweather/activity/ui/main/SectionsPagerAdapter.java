@@ -11,13 +11,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.dmitrys.nightingaleweather.R;
 
 /**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
+ * A [SectionsPagerAdapter] returns fragment for the given page.
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
+    private static int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -27,8 +26,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // need this comment? // getItem is called to instantiate the fragment for the given page.
-        // need this comment? // Return a PlaceholderFragment (defined as a static inner class below).
         Fragment fragment = null;
         switch (position) {
             case 0:

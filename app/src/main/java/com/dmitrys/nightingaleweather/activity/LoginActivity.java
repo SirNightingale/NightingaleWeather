@@ -3,7 +3,6 @@ package com.dmitrys.nightingaleweather.activity;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -76,8 +75,9 @@ public class LoginActivity extends Activity {
                     checkLogin(email, password);
                 } else {
                     // Prompt user to enter credentials
+                    String enterCredentials = getString(R.string.toast_enter_credentials);
                     Toast.makeText(getApplicationContext(),
-                            "Please enter the credentials!", Toast.LENGTH_LONG)
+                            enterCredentials, Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -101,7 +101,8 @@ public class LoginActivity extends Activity {
         // Tag used to cancel the request
         String tag_string_req = "req_login";
 
-        pDialog.setMessage("Logging in ...");
+        String progressLogging = getString(R.string.progress_logging);
+        pDialog.setMessage(progressLogging);
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -119,8 +120,6 @@ public class LoginActivity extends Activity {
                     // Check for error node in json
                     if (!error) {
                         // user successfully logged in
-                        // Create login session
-                        session.setLogin(true);
 
                         // Now store the user in SQLite
                         String uid = jObj.getString("uid");
@@ -134,6 +133,9 @@ public class LoginActivity extends Activity {
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
+                        // Create login session
+                        session.setLogin(true);
+
                         // Launch main activity
                         Intent intent = new Intent(LoginActivity.this,
                                 MainActivity.class);
@@ -144,6 +146,9 @@ public class LoginActivity extends Activity {
                         String errorMsg = jObj.getString("error_msg");
                         Toast.makeText(getApplicationContext(),
                                 errorMsg, Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 } catch (JSONException e) {
                     // JSON error
