@@ -5,11 +5,13 @@
     // Écrans d'inscription et de connexion
     <string name="hint_email">Email</string>
     <string name="hint_password">Mot de passe</string>
+    <string name="hint_repeat_password">Confirmez le mot de passe</string>
     <string name="hint_name">Nom complet</string>
     <string name="btn_login">Entrer</string>
     <string name="btn_register">S\'inscrire maintenant</string>
     <string name="btn_link_to_register">Non enregistré? Créer un compte enregistrement.</string>
     <string name="btn_link_to_login">Déjà enregistré! Entrer.</string>
+    <string name="toast_passwords_dont_match">Les mots de passe ne correspondent pas!</string>
     <string name="toast_enter_details">Merci de remplir tous les champs!</string>
     <string name="progress_registering">Enregistrement ...</string>
     <string name="success_register">Inscription réussie. Essayez de vous connecter!</string>
@@ -51,6 +53,10 @@
     <string name="weather_drizzle">&#xf01c;</string>
     // Sans données météorologiques
     <string name="place_not_found">Désolé, aucune donnée météo disponible.</string>
+    // Allusion
+    <string name="city_hint">Ville</string>
+    // Bouton de recherche
+    <string name="search">Cherch</string>
 
     // 3e fragment; demande d'autorisation de localisation
     <string name="title_location_permission">Accès à l\'emplacement</string>

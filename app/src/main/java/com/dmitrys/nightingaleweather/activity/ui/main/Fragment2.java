@@ -41,8 +41,8 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
 
         ltInflater = getLayoutInflater();
 
-        backgrounds[0] = R.color.bg_login;
-        backgrounds[1] = R.color.bg_main;
+        backgrounds[0] = R.color.secondaryColorB5;
+        backgrounds[1] = R.color.white;
 
         loadList();
     }
@@ -76,7 +76,7 @@ public class Fragment2 extends Fragment implements View.OnClickListener {
                                 humidity + ": " + dbCity.getListOfHumidity().get(view.getId()) + "\n" +
                                 pressure + ": " + dbCity.getListOfPressure().get(view.getId()) + " " + pressureUnit
                 )
-                //.setIcon(R.drawable.logo)
+                .setIcon(R.drawable.sun)
                 .setCancelable(true);
         AlertDialog alert = builder.create();
         alert.show();

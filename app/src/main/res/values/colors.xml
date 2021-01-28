@@ -27,4 +27,26 @@
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
     <color name="black">#000000</color>
+
+    // color scheme: triad; main color: 6300EE
+    <color name="mainColor1">#6300EE</color>
+    <color name="mainColor2">#642DB3</color>
+    <color name="mainColor3">#40009B</color>
+    <color name="mainColor4">#8B3EF7</color>
+    <color name="mainColor5">#A76FF7</color>
+
+    <color name="secondaryColorA1">#D5FD00</color>
+    <color name="secondaryColorA2">#A7BE2F</color>
+    <color name="secondaryColorA3">#8AA500</color>
+    <color name="secondaryColorA4">#DFFE40</color>
+    <color name="secondaryColorA5">#E8FE72</color>
+
+    <color name="secondaryColorB1">#FFBE00</color>
+    <color name="secondaryColorB2">#BF9B30</color>
+    <color name="secondaryColorB3">#A67B00</color>
+    <color name="secondaryColorB4">#FFCE40</color>
+    <color name="secondaryColorB5">#FFDB73</color>
+
+
+
 </resources>

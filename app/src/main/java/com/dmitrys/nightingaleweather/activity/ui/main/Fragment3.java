@@ -5,6 +5,10 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -14,8 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.ColorInt;
+import androidx.annotation.DrawableRes;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
 import com.dmitrys.nightingaleweather.R;
@@ -130,10 +138,25 @@ public class Fragment3 extends Fragment implements OnMapReadyCallback {
             CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentLocation, 10);
             map.animateCamera(cameraUpdate);
             // Sets new map marker
-            BitmapDescriptor currentLocationBitmapDescriptor = BitmapDescriptorFactory.fromResource(R.drawable.location);
+            BitmapDescriptor currentLocationBitmapDescriptor = vectorToBitmap(R.drawable.ic_baseline_place_24, Color.parseColor("#6300EE"));
             // Updates the location and zoom of the MapView
             map.addMarker(new MarkerOptions().position(currentLocation).title("It's Me!").icon(currentLocationBitmapDescriptor));
         }
+    }
+
+    /**
+     * Demonstrates converting a {@link Drawable} to a {@link BitmapDescriptor},
+     * for use as a marker icon.
+     */
+    private BitmapDescriptor vectorToBitmap(@DrawableRes int id, @ColorInt int color) {
+        Drawable vectorDrawable = ResourcesCompat.getDrawable(getResources(), id, null);
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
+                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        DrawableCompat.setTint(vectorDrawable, color);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
     public boolean checkLocationPermission() {

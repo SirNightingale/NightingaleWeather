@@ -31,6 +31,7 @@ public class RegisterActivity extends Activity {
     private EditText inputName;
     private EditText inputEmail;
     private EditText inputPassword;
+    private EditText inputRepeatPassword;
     private Button btnRegister;
     private Button btnLinkToLogin;
     private ProgressDialog pDialog;
@@ -51,6 +52,7 @@ public class RegisterActivity extends Activity {
         inputName = (EditText) findViewById(R.id.name);
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
+        inputRepeatPassword = (EditText) findViewById(R.id.repeatPassword);
         btnRegister = (Button) findViewById(R.id.btnRegister);
         btnLinkToLogin = (Button) findViewById(R.id.btnLinkToLoginScreen);
 
@@ -60,9 +62,17 @@ public class RegisterActivity extends Activity {
                 String name = inputName.getText().toString().trim();
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
+                String repeatPassword = inputRepeatPassword.getText().toString().trim();
 
                 if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-                    registerUser(name, email, password);
+                    if (password.equals(repeatPassword)) {
+                        registerUser(name, email, password);
+                    } else {
+                        String passwordsError = getString(R.string.toast_passwords_dont_match);
+                        Toast.makeText(getApplicationContext(),
+                                passwordsError, Toast.LENGTH_LONG)
+                                .show();
+                    }
                 } else {
                     String enterDetails = getString(R.string.toast_enter_details);
                     Toast.makeText(getApplicationContext(),
@@ -180,5 +190,13 @@ public class RegisterActivity extends Activity {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(getApplicationContext(),
+                LoginActivity.class);
+        startActivity(i);
+        finish();
     }
 }

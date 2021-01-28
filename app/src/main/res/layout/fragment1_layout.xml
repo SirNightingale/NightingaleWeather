@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/secondaryColorB4"
     android:orientation="vertical"
     tools:context=".activity.ui.main.Fragment1">
 
@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/secondaryColorB3"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/city_field"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/secondaryColorB3"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="13sp" />
 
@@ -37,6 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/secondaryColorB3"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="70sp"
             />
@@ -47,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/secondaryColorB3"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="40sp" />
 
@@ -56,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/weather_icon"
             android:layout_centerHorizontal="true"
+            android:textColor="@color/secondaryColorB3"
             android:textAppearance="?android:attr/textAppearanceMedium"
             />
 
@@ -64,7 +69,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="15dp"
         android:orientation="horizontal">
 
         <EditText
@@ -75,16 +81,18 @@
             android:ems="10"
             android:layout_weight="1"
             android:inputType="textPersonName"
-            android:hint="City"
+            android:hint="@string/city_hint"
             android:autofillHints="Omsk" />
 
-        <Button
+        <android.widget.Button
             android:id="@+id/btnToSearchCity"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginRight="15dp"
-            android:background="#FFFFFF"
-            app:icon="@android:drawable/ic_menu_search" />
+            android:textColor="@color/secondaryColorB3"
+            android:text="@string/search"
+            android:background="@drawable/search_btn_style" />
     </LinearLayout>
 
 </LinearLayout>

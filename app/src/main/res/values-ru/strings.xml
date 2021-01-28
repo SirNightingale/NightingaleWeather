@@ -5,14 +5,16 @@
     // Экраны регистрации и входа
     <string name="hint_email">Эл. адрес</string>
     <string name="hint_password">Пароль</string>
+    <string name="hint_repeat_password">Повторите пароль</string>
     <string name="hint_name">Полное имя</string>
     <string name="btn_login">ВОЙТИ</string>
     <string name="btn_register">ЗАРЕГИСТРИРОВАТЬСЯ</string>
-    <string name="btn_link_to_register">Не зарегистрирован? Создать уч. запись.</string>
-    <string name="btn_link_to_login">Уже зарегистрировался! Войти.</string>
+    <string name="btn_link_to_register">Не зарегистрированы? Создать уч. запись.</string>
+    <string name="btn_link_to_login">Уже усть уч. запись! Войти.</string>
+    <string name="toast_passwords_dont_match">Пароли не совпадают!</string>
     <string name="toast_enter_details">Пожалуйста, заполните все поля!</string>
     <string name="progress_registering">Регистрация ...</string>
-    <string name="success_register">Успешная регистрация. Попробуй войти!</string>
+    <string name="success_register">Успешная регистрация. Попробуйте войти!</string>
     <string name="toast_enter_credentials">Пожалуйста, введите учётные данные!</string>
     <string name="progress_logging">Выполняется вход ...</string>
 
@@ -51,6 +53,10 @@
     <string name="weather_drizzle">&#xf01c;</string>
     // При отсутствии данных о погоде
     <string name="place_not_found">К сожалению, данных о погоде нет.</string>
+    // Подсказка для воода города
+    <string name="city_hint">Город</string>
+    // Кнопка поиска
+    <string name="search">Найти</string>
 
     // 3-й фрагмент; запрос на разрешение "местоположения"
     <string name="title_location_permission">Доступ к местоположению</string>

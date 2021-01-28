@@ -5,11 +5,13 @@
     // Registration and Login activities
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
+    <string name="hint_repeat_password">Repeat Password</string>
     <string name="hint_name">Full name</string>
     <string name="btn_login">LOGIN</string>
     <string name="btn_register">REGISTER</string>
     <string name="btn_link_to_register">Not a member? Sign up now.</string>
     <string name="btn_link_to_login">Already registered! Login Me.</string>
+    <string name="toast_passwords_dont_match">Passwords do not match!</string>
     <string name="toast_enter_details">Please enter your details!</string>
     <string name="progress_registering">Registering ...</string>
     <string name="success_register">User successfully registered. Try login now!</string>
@@ -51,6 +53,10 @@
     <string name="weather_drizzle">&#xf01c;</string>
     // Without weather data
     <string name="place_not_found">Sorry, no weather data found.</string>
+    // Hint for city
+    <string name="city_hint">City</string>
+    // Search button
+    <string name="search">Search</string>
 
     // 3-й фрагмент; запрос на разрешение "местоположения"
     <string name="title_location_permission">Location access</string>
